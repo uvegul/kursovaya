@@ -28,6 +28,7 @@
               </li>
             </ul>
           </nav>
+          <a href="#zatemnenie"><button class="reg">Войти</button></a>
         </div>
       </section>
       <main>
@@ -39,8 +40,52 @@
         </span>
         </div>
       </main>
-      <img class="photo" src="img/main.jpg" alt="картинка" height="450px">
+      <div id="zatemnenie">
+      <div class="container" id="container">
+        <div class="form-container sign-up-container">
+          <form action="signup.php" method="POST" id="mailForm">
+            <h1>Создать аккаунт</h1>
+            <span></span>
+            <input type="text" name="name" id="name" placeholder="Имя" required>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <input type="password" name="password" id="password" placeholder="Пароль" required>
+            <input type="password" name="password_2" id="password_2" placeholder="Повторите пароль">
+            <button name="do_signup" type="submit">Регистрация</button>
+          </form>
+        </div>
+        <div class="form-container sign-in-container">
+        <a href="main.html"><img class="closeicn" src="https://cdn.iconscout.com/icon/free/png-256/close-1912235-1617704.png" alt=""></a>
+          <form action="login.php" method="post">
+            <h1>Вход</h1>
+            <span>использовать для входа</span>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Пароль" required>
+            <a href="#">Забыли пароль?</a>
+            <button name="do_login" type="submit">Войти</button>
+          </form>
+        </div>
+        <div class="overlay-container">
+          <div class="overlay">
+            <div class="overlay-panel overlay-left">
+              <h1>Уже зарегистрированы?</h1>
+              <p>Зайдите в аккаунт используя свою почту</p>
+              <button class="ghost" id="signIn">Войти</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+              <h1>Впервые на сайте?</h1>
+              <p>Зарегистрируйтесь за пару минут</p>
+              <button class="ghost" id="signUp">Регистрация</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="errorMess"></div>
+      <div class="photo">
+      <img class="img" src="img/main.jpg" alt="картинка" height="400px">
+      </div>
 </body>
 <script src="./js/script.js"></script>
+<script src="./js/formMail.js"></script>
 </html>
 
