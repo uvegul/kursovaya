@@ -6,7 +6,9 @@
     <link rel='stylesheet' href="./css/style.css">
     <link rel="stylesheet" href="./css/test.css">
     <link rel="shortcut icon" href="img/Logo.png" type="image/x-icon">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>Главная</title>
 </head>
 <body>
@@ -32,7 +34,7 @@
         </div>
       </section>
       <div class="row">
-        <div class="example-1 card">
+        <!--<div class="example-1 card">
           <div class="wrapper">
             <div class="date">
               <span class="day">20</span>
@@ -47,27 +49,214 @@
               </div>
             </div>
           </div>
-        </div>
+        </div>-->
         <div class="example-2 card">
           <div class="wrapper">
             <div class="header">
-              <div class="date">
-                <span class="day">15</span>
-                <span class="month">Июня</span>
-                <span class="year">1975</span>
-              </div>
             </div>
             <div class="data">
               <div class="content">
-                <span class="author">Автор теста</span>
-                <h1 class="title">Название теста</h1>
-                <p class="text">Описание теста</p>
-                <a href="#" class="button">Кнопка</a>
+                <span class="author">Автор теста: М.В. Матюхина</span>
+                <h1 class="title">Диагностика структуры учебной мотивации школьника</h1>
+                <p class="text">Оцените, насколько значимы для вас причины, по которым вы учитесь в школе.
+                  <br>• 0 баллов – почти не имеет значения;
+                  <br>• 1 балл – частично значимо;
+                  <br>• 2 балла – заметно значимо;
+                  <br>• 3 балла – очень значимо.</p>
+                <a href="#" class="click">Начать тест</a>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <form id='container' action="sendinf.php">
+        <img class="closeicn2" src="https://cdn.iconscout.com/icon/free/png-256/close-1912235-1617704.png" height="45" alt="">
+          <h1>Опросник</h1>
+          <div id='quiz'>
+            <div class="odd">
+            <p>1. Чтобы я хорошо учил предмет, мне должен нравиться учитель.</p><ul>
+              <li><input type="radio" name="answer0" value="0" required>0</li>
+              <li><input type="radio" name="answer0" value="1">1</li>
+              <li><input type="radio" name="answer0" value="2">2</li>
+              <li><input type="radio" name="answer0" value="3">3</li>
+             </ul>
+            </div>
+            <div class="even">
+            <p>2. Мне очень нравится учиться, расширять свои знания о мире.</p><ul>
+              <li><input type="radio" name="answer1" value="0" required>0</li>
+              <li><input type="radio" name="answer1" value="1">1</li>
+              <li><input type="radio" name="answer1" value="2">2</li>
+              <li><input type="radio" name="answer1" value="3">3</li>
+             </ul>
+            </div>
+            <div class="odd">
+              <p>3. Общаться с друзьями, с компанией в школе гораздо интереснее, чем сидеть на уроках, учиться.</p><ul>
+                <li><input type="radio" name="answer2" value="0" required>0</li>
+                <li><input type="radio" name="answer2" value="1">1</li>
+                <li><input type="radio" name="answer2" value="2">2</li>
+                <li><input type="radio" name="answer2" value="3">3</li>
+               </ul>
+              </div>
+              <div class="even">
+               <p>4. Для меня совсем немаловажно получить хорошую оценку.</p><ul>
+                <li><input type="radio" name="answer3" value="0" required>0</li>
+                <li><input type="radio" name="answer3" value="1">1</li>
+                <li><input type="radio" name="answer3" value="2">2</li>
+                <li><input type="radio" name="answer3" value="3">3</li>
+               </ul>
+              </div>
+              <div class="odd">
+                <p>5. Все, что я делаю, я делаю хорошо – это моя позиция.</p><ul>
+                  <li><input type="radio" name="answer4" value="0" required>0</li>
+                  <li><input type="radio" name="answer4" value="1">1</li>
+                  <li><input type="radio" name="answer4" value="2">2</li>
+                  <li><input type="radio" name="answer4" value="3">3</li>
+                 </ul>
+                </div>
+                <div class="even">
+                 <p>6. Знания помогают развить ум, сообразительность, смекалку.</p><ul>
+                  <li><input type="radio" name="answer5" value="0" required>0</li>
+                  <li><input type="radio" name="answer5" value="1">1</li>
+                  <li><input type="radio" name="answer5" value="2">2</li>
+                  <li><input type="radio" name="answer5" value="3">3</li>
+                 </ul>
+                </div>
+                <div class="odd">
+                  <p>7. Если ты школьник, то обязан учиться хорошо.</p><ul>
+                    <li><input type="radio" name="answer6" value="0" required>0</li>
+                    <li><input type="radio" name="answer6" value="1">1</li>
+                    <li><input type="radio" name="answer6" value="2">2</li>
+                    <li><input type="radio" name="answer6" value="3">3</li>
+                   </ul>
+                  </div>
+                  <div class="even">
+                   <p>8. Если на уроке царит обстановка недоброжелательности, излишней строгости, у меня пропадает всякое желание учиться.</p><ul>
+                    <li><input type="radio" name="answer7" value="0" required>0</li>
+                    <li><input type="radio" name="answer7" value="1">1</li>
+                    <li><input type="radio" name="answer7" value="2">2</li>
+                    <li><input type="radio" name="answer7" value="3">3</li>
+                   </ul>
+                  </div>
+                  <div class="odd">
+                  <p>9. Я испытываю интерес только к отдельным предметам.</p><ul>
+                    <li><input type="radio" name="answer8" value="0" required>0</li>
+                    <li><input type="radio" name="answer8" value="1">1</li>
+                    <li><input type="radio" name="answer8" value="2">2</li>
+                    <li><input type="radio" name="answer8" value="3">3</li>
+                   </ul>
+                  </div>
+                  <div class="even">
+                   <p>10. Считаю, что успех в учебе – немаловажная основа для уважения и признания среди одноклассников.</p><ul>
+                    <li><input type="radio" name="answer9" value="0" required>0</li>
+                    <li><input type="radio" name="answer9" value="1">1</li>
+                    <li><input type="radio" name="answer9" value="2">2</li>
+                    <li><input type="radio" name="answer9" value="3">3</li>
+                   </ul>
+                  </div>
+                  <div class="odd">
+                    <p>11. Приходится учиться, чтобы избежать надоевших нравоучений и разносов со стороны родителей и учителей.</p><ul>
+                      <li><input type="radio" name="answer10" value="0" required>0</li>
+                      <li><input type="radio" name="answer10" value="1">1</li>
+                      <li><input type="radio" name="answer10" value="2">2</li>
+                      <li><input type="radio" name="answer10" value="3">3</li>
+                     </ul>
+                    </div>
+                    <div class="even">
+                     <p>12. Я испытываю чувство удовлетворения, подъема, когда сам решу трудную задачу, хорошо выучу правило и т. д.</p><ul>
+                      <li><input type="radio" name="answer11" value="0" required>0</li>
+                      <li><input type="radio" name="answer11" value="1">1</li>
+                      <li><input type="radio" name="answer11" value="2">2</li>
+                      <li><input type="radio" name="answer11" value="3">3</li>
+                     </ul>
+                    </div>
+                    <div class="odd">
+                      <p>13. Хочу знать как можно больше, чтобы стать интересным, культурным человеком.</p><ul>
+                        <li><input type="radio" name="answer12" value="0" required>0</li>
+                        <li><input type="radio" name="answer12" value="1">1</li>
+                        <li><input type="radio" name="answer12" value="2">2</li>
+                        <li><input type="radio" name="answer12" value="3">3</li>
+                       </ul>
+                      </div>
+                      <div class="even">
+                       <p>14. Хорошо учиться, не пропускать уроки – моя гражданская обязанность на данном этапе моей жизни.</p><ul>
+                        <li><input type="radio" name="answer13" value="0" required>0</li>
+                        <li><input type="radio" name="answer13" value="1">1</li>
+                        <li><input type="radio" name="answer13" value="2">2</li>
+                        <li><input type="radio" name="answer13" value="3">3</li>
+                       </ul>
+                      </div>
+                      <div class="odd">
+                        <p>15. На уроке не люблю болтать и отвлекаться, потому что для меня очень важно понять объяснение учителя, правильно ответить на его вопросы.</p><ul>
+                          <li><input type="radio" name="answer14" value="0" required>0</li>
+                          <li><input type="radio" name="answer14" value="1">1</li>
+                          <li><input type="radio" name="answer14" value="2">2</li>
+                          <li><input type="radio" name="answer14" value="3">3</li>
+                         </ul>
+                        </div>
+                        <div class="even">
+                         <p>16. Мне очень нравится, если на уроке организуют совместную с ребятами работу (в паре, бригаде, команде).</p><ul>
+                          <li><input type="radio" name="answer15" value="0" required>0</li>
+                          <li><input type="radio" name="answer15" value="1">1</li>
+                          <li><input type="radio" name="answer15" value="2">2</li>
+                          <li><input type="radio" name="answer15" value="3">3</li>
+                         </ul>
+                        </div>
+                        <div class="odd">
+                          <p>17. Я очень чувствителен к похвале учителя, родителей за мои школьные успехи.</p><ul>
+                            <li><input type="radio" name="answer16" value="0" required>0</li>
+                            <li><input type="radio" name="answer16" value="1">1</li>
+                            <li><input type="radio" name="answer16" value="2">2</li>
+                            <li><input type="radio" name="answer16" value="3">3</li>
+                           </ul>
+                          </div>
+                          <div class="even">
+                           <p>18. Учусь хорошо, так как всегда стремлюсь быть в числе лучших.</p><ul>
+                            <li><input type="radio" name="answer17" value="0" required>0</li>
+                            <li><input type="radio" name="answer17" value="1">1</li>
+                            <li><input type="radio" name="answer17" value="2">2</li>
+                            <li><input type="radio" name="answer17" value="3">3</li>
+                           </ul>
+                          </div>
+                          <div class="odd">
+                            <p>19. Я много читаю книг, кроме учебников (по истории, спорту, природе и т. д.).</p><ul>
+                              <li><input type="radio" name="answer18" value="0" required>0</li>
+                              <li><input type="radio" name="answer18" value="1">1</li>
+                              <li><input type="radio" name="answer18" value="2">2</li>
+                              <li><input type="radio" name="answer18" value="3">3</li>
+                             </ul>
+                            </div>
+                            <div class="even">
+                             <p>20. Учеба в моем возрасте – самое главное дело.</p><ul>
+                              <li><input type="radio" name="answer19" value="0" required>0</li>
+                              <li><input type="radio" name="answer19" value="1">1</li>
+                              <li><input type="radio" name="answer19" value="2">2</li>
+                              <li><input type="radio" name="answer19" value="3">3</li>
+                             </ul>
+                            </div>
+                            <div class="odd">
+                              <p>21. В школе весело, интереснее, чем дома, во дворе.</p><ul>
+                                <li><input type="radio" name="answer20" value="0" required>0</li>
+                                <li><input type="radio" name="answer20" value="1">1</li>
+                                <li><input type="radio" name="answer20" value="2">2</li>
+                                <li><input type="radio" name="answer20" value="3">3</li>
+                               </ul>
+                              </div>
+          </div>
+          <div class="addinfo">
+              <legend class="legend">Данные</legend>
+              <div class="input">
+                <input type="text" name="name" id="name" maxlength="20" placeholder="Имя" required />
+                <span class="icn"><i class="icon-envelope-alt"></i></span>
+              </div>
+              <div class="input">
+                <input type="number" name="klass" id="klass" min="1" max="11" placeholder="Класс" required />
+                <span class="icn"><i class="icon-book"></i></span>
+              </div>
+              <button type="submit" id="submit" class="submit">Результат</button>
+          </div>      
+        </form>     
 </body>
-<script src="./js/script.js"></script>
+<script src="./js/head.js"></script>
+<script src="./js/testajax.js"></script>
+<script src="./js/test.js"></script>
 </html>

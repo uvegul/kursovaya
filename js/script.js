@@ -1,23 +1,21 @@
-(function($) { // Begin jQuery
-    $(function() { // DOM ready
-      // If a link has a dropdown, add sub menu toggle.
-      $('nav ul li a:not(:only-child)').click(function(e) {
-        $(this).siblings('.nav-dropdown').toggle();
-        // Close one dropdown when selecting another
-        $('.nav-dropdown').not($(this).siblings()).hide();
-        e.stopPropagation();
-      });
-      // Clicking away from dropdown will remove the dropdown class
-      $('html').click(function() {
-        $('.nav-dropdown').hide();
-      });
-      // Toggle open and close nav styles on click
-      $('#nav-toggle').click(function() {
-        $('nav ul').slideToggle();
-      });
-      // Hamburger to X toggle
-      $('#nav-toggle').on('click', function() {
-        this.classList.toggle('active');
-      });
-    }); // end DOM ready
-  })(jQuery); // end jQuery
+  const signUpButton = document.getElementById('signUp');
+  const signInButton = document.getElementById('signIn');
+  const container = document.getElementById('signupform');
+
+  signUpButton.addEventListener('click', () => {
+    container.classList.add("right-panel-active");
+  });
+  signInButton.addEventListener('click', () => {
+    container.classList.remove("right-panel-active");
+  });
+  
+  $(document).ready(function () {
+    $('.descr2, .descr3, .descr4, .descr5').hide();
+    $('.open').click(function() {
+      $('.descr1, .descr2, .descr3, .descr4, .descr5').hide();
+      $('.descr' + $(this).attr('target')).show();
+    });
+  });
+  $(".closeicn").click(function(){
+    $("#zatemnenie").css("display","none");
+  });
